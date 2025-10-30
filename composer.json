@@ -1,0 +1,16 @@
+{
+    "name": "0200782413009/projeto_pi_entrega",
+    "description": "luan/prieto",
+    "autoload": {
+       "psr-4": {
+            "App\\": "app//"
+        }
+
+    },
+    "authors": [
+        {
+            "name": "Luan Marina"
+        }
+    ],
+    "require": {}
+}
