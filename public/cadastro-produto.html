@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - SufGang</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+         <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="logo"><img src="https://cdn.awsli.com.br/1605/1605630/arquivos/sufgangdesktop.png"
+                        alt="Camisa Brasil" class="product-image"></div>
+                <div class="nav-links">
+                    <a href="./loja.html">Shop</a>
+                    <button class="btn dropdown-toggle fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cadastrar
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu">
+                        <li><a class="dropdown-item" href="./cadastro-usuario.html">Usuário</a></li>
+                        <li><a class="dropdown-item" href="./cadastro-produto.html">Produto</a></li>
+                    </ul>
+                    </li>
+                    </ul>
+                    <button class="btn dropdown-toggle fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        Listas
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu">
+                        <li><a class="dropdown-item" href="./listagem-usuarios.html">Usuário</a></li>
+                        <li><a class="dropdown-item" href="./listagem-produto.html">Produto</a></li>
+                    </ul>
+                    </li>
+                    </ul>
+                    <a href="./dashboard.html">Dashboard</a>
+                    <a href="./login.html">Login</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Título -->
+        <h1 class="page-title">CADASTRO DE PRODUTO</h1>
+
+        <main class="dashboard-container">
+            <div class="form-container">
+             
+                <form action="./listagem-produto.html" method="POST">
+                    <div class="row mb-3">
+                        <div class="col-md-12 mb-3">
+                            <label for="nome" class="form-label fw-semibold">Nome do produto:</label>
+                            <input type="text" id="nome" name="nome" class="form-control"
+                                placeholder="Digite o nome completo" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-12 mb-3">
+                            <label for="nome" class="form-label fw-semibold">Descrição:</label>
+                            <input type="text" id="nome" name="nome" class="form-control"
+                                placeholder="Digite aqui" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3">
+                            <label for="quantidade" class="form-label fw-semibold">Quantidade:</label>
+                            <input type="number" id="quantidade" name="quantidade" class="form-control"
+                                placeholder="1">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="valor" class="form-label fw-semibold">Cidade:</label>
+                            <input type="number" id="valor" name="valor" class="form-control" placeholder="R$">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="categoria" class="form-label fw-semibold">Categoria:</label>
+                            <select id="categoria" name="categoria" class="form-select">
+                                <option value="camisa">Camisa</option>
+                                <option value="boné">Boné</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-3 mt-4">
+                        <a href="listagem-usuarios.html"
+                            class="btn btn-link text-primary">Voltar</a>
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p> Footer Sufgang Shop</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
