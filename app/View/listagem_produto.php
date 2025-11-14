@@ -4,7 +4,7 @@
         <main class="dashboard-container">
             <div class="list-container">
                 <div class="list-header">
-                    <a href="cadastro-produto.html" class="btn btn-primary">ADICIONAR</a>
+                    <a href="/" class="btn btn-primary">ADICIONAR</a>
                 </div>
 
                 <div class="table-responsive">
