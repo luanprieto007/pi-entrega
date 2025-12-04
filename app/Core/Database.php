@@ -11,7 +11,7 @@ class Database {
         $porta = '3306';
         $banco = 'sufgangstore';
         $usuario = 'root';
-        $senha = '';
+        $senha = 'Qpcma41x.';
         
         $dsn = "mysql:host=$host;port=$porta;dbname=$banco;charset=utf8";
         

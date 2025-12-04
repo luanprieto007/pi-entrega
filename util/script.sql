@@ -18,10 +18,10 @@ CREATE TABLE usuarios (
     bairro VARCHAR(255), -- bairro
     cidade VARCHAR(255), -- cidade
     cep VARCHAR(10), -- CEP
-    genero CHAR(1), -- Genero
-    estado CHAR(2), -- estado (ex: SP, RJ)
+    genero CHAR(50), -- Genero
+    estado CHAR(20), -- estado (ex: SP, RJ)
     email VARCHAR(255) NOT NULL, -- e-mail válido
-    nivel_acesso ENUM('Administrador', 'Funcionário', 'Cliente') NOT NULL, -- tipo de usuário
+    nivel_acesso VARCHAR(30), -- tipo de usuário
     senha VARCHAR(255) NOT NULL, -- senha criptografada
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- data de criação
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- data de alteração
@@ -55,4 +55,16 @@ INSERT INTO usuarios (nome, cpf, data_nascimento, celular, rua, numero, compleme
     'Funcionário',
     '$2y$10$OutroExemploDeHashDeSenha1234567890abc', -- senha criptografada
     NULL
+);
+
+CREATE TABLE produtos (
+    id_produto BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT, 
+    quantidade INT DEFAULT 0,
+    valor DECIMAL(10,2) NOT NULL,
+    categoria VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+    deleted_at TIMESTAMP NULL DEFAULT NULL 
 );

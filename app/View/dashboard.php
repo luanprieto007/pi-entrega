@@ -33,8 +33,8 @@
                                 <h5 class="card-title fw-bold">Produtos</h5>
                                 <p class="card-text text-muted">Gerenciar catálogo de produtos</p>
                                 <div class="d-grid gap-2">
-                                    <a href="listagem-produtos.html" class="btn btn-success btn-sm">Ver Produtos</a>
-                                    <a href="cadastro-produto.html" class="btn btn-outline-success btn-sm">Novo
+                                    <a href="/produto" class="btn btn-success btn-sm">Ver Produtos</a>
+                                    <a href="/produto/inserir" class="btn btn-outline-success btn-sm">Novo
                                         Produto</a>
                                 </div>
                             </div>

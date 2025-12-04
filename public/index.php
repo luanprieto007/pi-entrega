@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\UsuarioController;
-
+use App\Controllers\ProdutoController;
 
 // Função para renderizar as telas com layout (COM TEMPLATE)
 function render($view, $data = []) {
@@ -37,28 +37,63 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 if ($url == "/" || $url == "/index") {
     render('home.php');
 
+
 // USUÁRIOS
 } else if ($url == "/usuario") {
-   //Cria uma instancia do Controller e chama a função de listar 
-   $controller = new UsuarioController();
-   $controller->listar();
+    // Lista todos os usuários
+    $controller = new UsuarioController();
+    $controller->listar();
 
 } else if ($url == "/usuario/inserir") {
-    render('cadastro_usuario.php');
+    // Formulário de cadastro
+    render('usuario/cadastro_usuario.php');
+
+} else if ($url == "/usuario/salvar") {
+    // Salvar novo usuário
+    $controller = new UsuarioController();
+    $controller->salvar();
+
+} else if ($url == "/usuario/editar") {
+    // Página de edição do usuário
+    $controller = new UsuarioController();
+    $controller->editar(); // carrega dados e renderiza o form
+
+} else if ($url == "/usuario/excluir") {
+    // Excluir usuário
+    $controller = new UsuarioController();
+    $controller->excluir();
+
 
 // PRODUTOS
 } else if ($url == "/produto") {
-    render('listagem_produto.php');
+    $controller = new ProdutoController();
+    $controller->listar();
+
 } else if ($url == "/produto/inserir") {
-    render('cadastro_produto.php');
+    render('produto/cadastro_produto.php');
+
+} else if ($url == "/produto/editar") {
+    $controller = new ProdutoController();
+    $controller->editar($_GET['id']);
+
+} else if ($url == "/produto/excluir") {
+    $controller = new ProdutoController();
+    $controller->excluir($_GET['id']);
+
+} else if ($url == "/produto/salvar") {
+    $controller = new ProdutoController();
+    $controller->salvar();
+    
 
 // DASHBOARD
 } else if ($url == "/dashboard") {
     render('dashboard.php');
 
+
 // LOGIN
 } else if ($url == "/login") {
     render('login.php');
+
 
 // 404 - Página não encontrada
 } else {
