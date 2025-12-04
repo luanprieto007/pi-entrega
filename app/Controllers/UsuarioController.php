@@ -25,7 +25,7 @@ class UsuarioController
     {
         $usuario = Usuario::buscarPorId($id);
 
-        render("usuarios/cadastro_usuario.php", [
+        render("usuario/cadastro_usuario.php", [
             'title' => 'Alterar Usuário',
             "dados" => $usuario
         ]);

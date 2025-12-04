@@ -56,12 +56,12 @@ if ($url == "/" || $url == "/index") {
 } else if ($url == "/usuario/editar") {
     // Página de edição do usuário
     $controller = new UsuarioController();
-    $controller->editar(); // carrega dados e renderiza o form
+    $controller->editar($_GET['id']); // carrega dados e renderiza o form
 
 } else if ($url == "/usuario/excluir") {
     // Excluir usuário
     $controller = new UsuarioController();
-    $controller->excluir();
+    $controller->excluir($_GET['id']);
 
 
 // PRODUTOS

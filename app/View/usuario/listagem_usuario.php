@@ -29,16 +29,8 @@
                         <td><?= $u['nivel_acesso'] ?></td>
                         <td>
                             <div class="table-actions">
-                                <a href="/usuario/editar/<?= $u['id_usuario'] ?>" 
-                                   class="btn btn-warning">
-                                   Editar
-                                </a>
-
-                                <a href="/usuario/excluir/<?= $u['id_usuario'] ?>" 
-                                   class="btn btn-danger"
-                                   onclick="return confirm('Tem certeza que deseja excluir?')">
-                                   Excluir
-                                </a>
+                                <a href="/usuario/editar?id=<?= $u['id_usuario'] ?>" class="btn btn-warning">Editar</a>
+                                <a href="/usuario/excluir?id=<?= $u['id_usuario'] ?>" class="btn btn-danger" onclick="return confirm('Confirma exclusão?')">Excluir</a>
                             </div>
                         </td>
                     </tr>

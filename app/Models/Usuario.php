@@ -84,25 +84,13 @@ class Usuario
 
             $senha_hash = password_hash($dados['senha'], PASSWORD_BCRYPT);
 
-            $sql = "UPDATE usuarios SET
-                nome = :nome,
-                cpf = :cpf,
-                data_nascimento = :data_nascimento,
-                celular = :celular,
-                rua = :rua,
-                numero = :numero,
-                complemento = :complemento,
-                bairro = :bairro,
-                cidade = :cidade,
-                cep = :cep,
-                genero = :genero,
-                estado = :estado,
-                email = :email,
-                nivel_acesso = :nivel_acesso,
-                senha = :senha
-                WHERE id_usuario = :id";
-
-            $stmt = $pdo->prepare($sql);
+            $sql = "UPDATE produtos SET 
+                    nome = :nome,
+                    descricao = :descricao,
+                    quantidade = :quantidade,
+                    valor = :valor,
+                    categoria = :categoria
+                    WHERE id_produto = :id_produto";
 
             $stmt->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
             $stmt->bindParam(':cpf', $dados['cpf'], PDO::PARAM_STR);
@@ -126,27 +114,24 @@ class Usuario
         } catch (PDOException $e) {
             echo "Erro ao alterar: " . $e->getMessage();
             exit;
-        }
+        }   
     }
 
-    // Aplica soft delete ao usuário
-    
-    public static function softDelete($id)
-    {
-        $pdo = Database::conectar();
-        $sql = "UPDATE usuarios SET deleted_at = NOW() WHERE id_usuario = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    public static function softDelete($id){
+        $con = self::getDB();
+        $sql = "UPDATE produtos SET deleted_at = NOW() WHERE id_produto = :id_produto";
+        $stmt = $con->prepare($sql);
+        $stmt->bindValue(":id_produto", $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
 
-    //Deleta fisicamente o usuário
-    public static function fisicalDelete($id)
-    {
-        $pdo = Database::conectar();
-        $sql = "DELETE FROM usuarios WHERE id_usuario = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    public static function fisicalDelete($id){
+        $con = self::getDB();
+        $sql = "DELETE FROM produtos WHERE id_produto = :id_produto";
+        $stmt = $con->prepare($sql);
+        $stmt->bindValue(":id_produto", $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
 }
+
+
